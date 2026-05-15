@@ -1,6 +1,7 @@
 package com.smartclinic.backend.controller;
 
 import com.smartclinic.backend.dto.RegisterRequest;
+import com.smartclinic.backend.dto.LoginRequest;
 import com.smartclinic.backend.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,5 +17,10 @@ public class AuthController {
     public String register(@RequestBody RegisterRequest request) {
 
         return authService.register(request);
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request) {
+
+        return authService.login(request);
     }
 }
